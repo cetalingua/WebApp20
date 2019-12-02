@@ -1,0 +1,58 @@
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <link rel='stylesheet' href='../static/style.css'>
+        <script src='../static/client.js'></script>
+    </head>
+    <body>
+        <div>
+            <div class='center'>
+               <div class='logo'><img src="static/img/yumminky-icon-animals-manatee-64px.png" alt="The logo"></div>
+                <div class='title'>MANATEE CHAT DEMO ML MODEL</div>
+                <div class='introduction'>
+                  <p>We are happy to present our first deployed deep learning model that can identify files with manatee calls and mastication sounds. </p>
+                  <p>This model was trained on a small but labeled dataset (see our
+                  <a target="_blank" href="https://www.zooniverse.org/projects/cetalingua/manatee-chat">Zooniverse project</a>) and currently
+                  has 95% accuracy rate.</p>
+                  <p>You can check model performance by selecting random spectrogram from Manatee Chat data 
+                  that were not used for model training or validation (“Select Random Image”)
+                  or by using spectrogram URL/uploading the spectrogram.</p>
+                  <p>To learn more about Manatee Chat projects, check our website <a target="_blank" href="https://www.cetalingua.com">here</a>.</p>
+                </div>
+
+                <div class='content'>
+                    <div class='no-display'>
+                        <input id='file-input'
+                            class='no-display'
+                            type='file'
+                            name='file'
+                            accept='image/*'
+                            onchange='showPicked(this)'>
+                    </div>
+
+                    <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
+                    <div class='upload-label'>
+                        <label id='upload-label'>No file chosen</label>
+                    </div>
+                    <div>
+                        <b>Or submit a url:</b><input id="image_url" type="text" />
+                        <button id="fetch_analyze_button" type="button" onclick="fetch_analyze()">
+                        Fetch and analyze image</button>
+                    </div>
+                    <div>
+                        <img id='image-picked' class='no-display' alt='Chosen Image' height='300'>
+                    </div>
+                     <div class='analyze'>
+                        <button id='select-random-image-button' class='analyze-button' type='button' onclick='select_random_image()'>Select Random Image</button>
+                    </div>
+                    <div class='analyze'>
+                        <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
+                    </div>
+                    <div class='result-label'>
+                        <label id='result-label'></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
